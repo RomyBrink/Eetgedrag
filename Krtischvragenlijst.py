@@ -106,12 +106,12 @@ if submitted:
         # Advies tonen met neutrale (zwarte) tekst
         if score < 10:
             st.markdown(
-                "<div style='background-color:#d9fdd3;padding:15px;border-radius:10px;'><b>✅ Advies:</b> Er zijn geen directe zorgen over het eetgedrag van uw kind. <br> <a href='#' style='color:darkgreen;'>Volg deze link voor tips.</a></div>",
+                "<div style='background-color:#d9fdd3;padding:15px;border-radius:10px;'><b>✅ Advies:</b> Er zijn geen directe zorgen over het eetgedrag van uw kind. <br> <a href='#' style='color:darkgreen;'>bekijk <a href='https://github.com/RomyBrink/Eetgedrag/blob/main/AvoidantRestrictive_Food_Intake_Disorder_A_Longitu.pdf' style='color:darkgreen;'>dit document voor tips.</a></div>",
                 unsafe_allow_html=True
             )
         elif 10 <= score < 15:
             st.markdown(
-                "<div style='background-color:#fff4cc;padding:15px;border-radius:10px;'><b>⚠️ Advies:</b> Er zijn enkele aandachtspunten. Houd het gedrag in de gaten en bekijk <a href='#' style='color:darkgreen;'>dit document voor tips.</a></div>",
+                "<div style='background-color:#fff4cc;padding:15px;border-radius:10px;'><b>⚠️ Advies:</b> Er zijn enkele aandachtspunten. Houd het gedrag in de gaten en bekijk <a href='https://github.com/RomyBrink/Eetgedrag/blob/main/AvoidantRestrictive_Food_Intake_Disorder_A_Longitu.pdf' style='color:darkgreen;'>dit document voor tips.</a></div>",
                 unsafe_allow_html=True
             )
         else:
