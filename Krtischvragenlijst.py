@@ -2,25 +2,57 @@ import streamlit as st
 # Pagina-configuratie
 st.set_page_config(page_title="Eetgedrag Vragenlijst", layout="centered")
 
-#opmaak
+# Opmaak en uitleg
 st.markdown("### 🌟 Deze vragenlijst is bedoeld voor de ouders van kinderen (2 tot 6 jaar) die moeilijk eten")
-st.markdown("<h4 style='text-align:center;'>🎯 Beantwoord alle vragen eerlijk voor een passend advies</h4>", unsafe_allow_html=True)
+st.markdown("<span style='color:darkgreen;font-size:18px;'>Let op: voor een betrouwbaar advies moet u elke vraag zorgvuldig beantwoorden.</span>", unsafe_allow_html=True)
+
+# Custom CSS
 st.markdown(
     """
     <style>
-    body {
-        background-color: #f0f8ff;
+    /* Algemene achtergrond */
+    .stApp {
+        background-color: #e6ffe6;
+        color: black;
     }
+
+    /* Vragenblok (radio wrapper) donkergroen met witte tekst */
     .stRadio > div {
-        background-color: #ffffff;
-        padding: 10px;
-        border-radius: 10px;
+        background-color: #006400; /* donkergroen */
+        padding: 15px;
+        border-radius: 12px;
+        color: white !important;
+    }
+
+    /* Radiobutton labels wit */
+    label {
+        color: white !important;
+    }
+
+    /* Optieknoppen (de keuzes) wit op donkergroen */
+    .st-eg {
+        color: white !important;
+        background-color: #006400 !important;
+        padding: 6px 12px;
+        border-radius: 6px;
+        margin: 5px 0;
+    }
+
+    /* Zorg dat geselecteerde radio’s ook leesbaar blijven */
+    div[role="radiogroup"] > div {
+        background-color: #006400;
+        color: white !important;
+        border-radius: 8px;
+        padding: 8px;
     }
     </style>
     """,
     unsafe_allow_html=True
 )
+
+# Titel
 st.title("Vragenlijst over het eetgedrag van uw kind")
+
 
 # Vragen en puntensysteem
 vragen = [
