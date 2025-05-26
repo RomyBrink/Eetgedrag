@@ -1,50 +1,56 @@
 import streamlit as st
+
 # Pagina-configuratie
 st.set_page_config(page_title="Eetgedrag Vragenlijst", layout="centered")
 
-# Opmaak en uitleg
+# Intro en uitleg
 st.markdown("### 🌟 Deze vragenlijst is bedoeld voor de ouders van kinderen (2 tot 6 jaar) die moeilijk eten")
 st.markdown("<span style='color:darkgreen;font-size:18px;'>Let op: voor een betrouwbaar advies moet u elke vraag zorgvuldig beantwoorden.</span>", unsafe_allow_html=True)
 
-# Custom CSS
+# ✅ CSS styling
 st.markdown(
     """
     <style>
-    /* Algemene achtergrond */
+    /* Algemene achtergrondkleur */
     .stApp {
-        background-color: #e6ffe6;
+        background-color: #e6ffe6; /* pastelgroen */
         color: black;
     }
 
-    /* Vragenblok (radio wrapper) donkergroen met witte tekst */
-    .stRadio > div {
-        background-color: #006400; /* donkergroen */
-        padding: 15px;
-        border-radius: 12px;
-        color: white !important;
-    }
-
-    /* Radiobutton labels wit */
+    /* Zwarte vraagtekst (label) */
     label {
-        color: white !important;
+        color: black !important;
+        font-weight: bold;
     }
 
-    /* Optieknoppen (de keuzes) wit op donkergroen */
+    /* Radiobutton container: donkergroene achtergrond + wit antwoord */
+    div[role="radiogroup"] > div {
+        background-color: #006400;  /* donkergroen */
+        color: white !important;
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 8px;
+    }
+
+    /* Radiobutton labels (de keuzes) */
     .st-eg {
         color: white !important;
-        background-color: #006400 !important;
-        padding: 6px 12px;
-        border-radius: 6px;
-        margin: 5px 0;
     }
 
-    /* Zorg dat geselecteerde radio’s ook leesbaar blijven */
-    div[role="radiogroup"] > div {
+    /* Verstuurknop donkergroen met witte tekst */
+    button[kind="primary"] {
         background-color: #006400;
-        color: white !important;
+        color: white;
         border-radius: 8px;
-        padding: 8px;
+        padding: 10px 20px;
+        font-size: 16px;
     }
+
+    button[kind="primary"]:hover {
+        background-color: #228B22; /* iets lichter bij hover */
+        color: white;
+    }
+
     </style>
     """,
     unsafe_allow_html=True
@@ -52,6 +58,7 @@ st.markdown(
 
 # Titel
 st.title("Vragenlijst over het eetgedrag van uw kind")
+
 
 
 # Vragen en puntensysteem
