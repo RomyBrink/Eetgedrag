@@ -103,15 +103,19 @@ if submitted:
     else:
         score = sum(antwoorden)
 
-        st.subheader("Uw totaalscore is:")
-        st.success(f"{score} punten")
-
+        # Advies tonen met neutrale (zwarte) tekst
         if score < 10:
-            st.info("✅ Advies: Er zijn geen directe zorgen over het eetgedrag van uw kind. Volg deze link voor tips.")
+            st.markdown(
+                "<div style='background-color:#d9fdd3;padding:15px;border-radius:10px;'><b>✅ Advies:</b> Er zijn geen directe zorgen over het eetgedrag van uw kind. <br> <a href='#' style='color:darkgreen;'>Volg deze link voor tips.</a></div>",
+                unsafe_allow_html=True
+            )
         elif 10 <= score < 15:
-            st.warning("⚠️ Advies: Er zijn enkele aandachtspunten. Houd het gedrag in de gaten en bekijken dit document voor tips.")
+            st.markdown(
+                "<div style='background-color:#fff4cc;padding:15px;border-radius:10px;'><b>⚠️ Advies:</b> Er zijn enkele aandachtspunten. Houd het gedrag in de gaten en bekijk <a href='#' style='color:darkgreen;'>dit document voor tips.</a></div>",
+                unsafe_allow_html=True
+            )
         else:
-            st.error("❗ Advies: De score wijst op mogelijke eetproblemen. Neem contact op met de diëtist.")
-
-
-
+            st.markdown(
+                "<div style='background-color:#ffe6e6;padding:15px;border-radius:10px;'><b>❗ Advies:</b> De score wijst op mogelijke eetproblemen. <br>Neem <a href='#' style='color:darkred;'>contact op met een diëtist.</a></div>",
+                unsafe_allow_html=True
+            )
