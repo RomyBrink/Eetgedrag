@@ -1,4 +1,23 @@
 import streamlit as st
+#opmaak
+st.markdown("### 🌟 Deze vragenlijst is bedoeld voor de ouders van kinderen (2 tot 6 jaar) die moeilijk eten")
+st.markdown("<span style='color:pink;font-size:18px;'>Let op: voor een betrouwbaar advies moet u elke vraag zorgvuldig beantwoorden.</span>", unsafe_allow_html=True)
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: #f0f8ff;
+    }
+    .stRadio > div {
+        background-color: #ffffff;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 
 # Pagina-configuratie
 st.set_page_config(page_title="Eetgedrag Vragenlijst", layout="centered")
@@ -13,7 +32,7 @@ vragen = [
     ("Eet uw kind minder dan aanbevolen hoeveelheid voor zijn of haar leeftijd?", [0, 1, 2]),
     ("Lijkt uw kind angstig of gestrest rond eetmomenten?", [0, 1, 2]),
     ("Kokhalst uw kind tijdens de maaltijd?", [0, 1, 2]),
-    ("Is uw kind in de afgelopen 3 maanden afgevallen, zonder aanwijsbare reden (ziekte)?", [0, None, 3]),
+    ("Is uw kind in de afgelopen 3 maanden afgevallen, zonder aanwijsbare reden (ziekte)?", [0, 0, 3]),
     ("Toont uw kind interesse in eten?", [2, 1, 0]),
     ("Weigert uw kind vanaf de geboorte bepaalde producten te eten?", [0, 1, 3]),
     ("Heeft uw kind voorkeur voor bepaalde smaken of structuren (krokant, glad, vloeibaar, zacht voedsel etc.)?", [0, 1, 3]),
@@ -53,12 +72,12 @@ if submitted:
         st.subheader("Uw totaalscore is:")
         st.success(f"{score} punten")
 
-        if score < 15:
+        if score < 10:
             st.info("✅ Advies: Er zijn geen directe zorgen over het eetgedrag van uw kind. Volg deze link voor tips.")
-        elif 15 <= score < 30:
+        elif 10 <= score < 15:
             st.warning("⚠️ Advies: Er zijn enkele aandachtspunten. Houd het gedrag in de gaten en bekijken dit document voor tips.")
         else:
-            st.error("❗ Advies: De score wijst op mogelijke eetproblemen. Neem contact op met een kinderarts of diëtist.")
+            st.error("❗ Advies: De score wijst op mogelijke eetproblemen. Neem contact op met de diëtist.")
 
 
 
