@@ -7,33 +7,31 @@ st.set_page_config(page_title="Eetgedrag Vragenlijst", layout="centered")
 st.markdown("### 🌟 Deze vragenlijst is bedoeld voor de ouders van kinderen (2 tot 6 jaar) die moeilijk eten")
 st.markdown("<span style='color:darkgreen;font-size:18px;'>Let op: voor een betrouwbaar advies moet u elke vraag zorgvuldig beantwoorden.</span>", unsafe_allow_html=True)
 
-# ✅ CSS styling
+# ✅ Nieuwe, verbeterde CSS
 st.markdown(
     """
     <style>
-    /* Algemene achtergrondkleur */
     .stApp {
         background-color: #e6ffe6; /* pastelgroen */
         color: black;
     }
 
-    /* Zwarte vraagtekst (label) */
+    /* Vraagtekst = zwart */
     label {
         color: black !important;
         font-weight: bold;
     }
 
-    /* Radiobutton container: donkergroene achtergrond + wit antwoord */
-    div[role="radiogroup"] > div {
-        background-color: #006400;  /* donkergroen */
-        color: white !important;
+    /* Donkergroene container rond de radiobuttons */
+    div[data-testid="stRadio"] {
+        background-color: #006400;
+        padding: 12px;
         border-radius: 10px;
-        padding: 10px;
-        margin-bottom: 8px;
+        margin-bottom: 16px;
     }
 
-    /* Radiobutton labels (de keuzes) */
-    .st-eg {
+    /* Radiobutton tekst = wit */
+    div[data-testid="stRadio"] label {
         color: white !important;
     }
 
@@ -47,10 +45,9 @@ st.markdown(
     }
 
     button[kind="primary"]:hover {
-        background-color: #228B22; /* iets lichter bij hover */
+        background-color: #228B22;
         color: white;
     }
-
     </style>
     """,
     unsafe_allow_html=True
