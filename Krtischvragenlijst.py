@@ -1,7 +1,10 @@
 import streamlit as st
+# Pagina-configuratie
+st.set_page_config(page_title="Eetgedrag Vragenlijst", layout="centered")
+
 #opmaak
 st.markdown("### 🌟 Deze vragenlijst is bedoeld voor de ouders van kinderen (2 tot 6 jaar) die moeilijk eten")
-st.markdown("<span style='color:pink;font-size:18px;'>Let op: voor een betrouwbaar advies moet u elke vraag zorgvuldig beantwoorden.</span>", unsafe_allow_html=True)
+st.markdown("<h4 style='text-align:center;'>🎯 Beantwoord alle vragen eerlijk voor een passend advies</h4>", unsafe_allow_html=True)
 st.markdown(
     """
     <style>
@@ -17,11 +20,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
-
-# Pagina-configuratie
-st.set_page_config(page_title="Eetgedrag Vragenlijst", layout="centered")
-
 st.title("Vragenlijst over het eetgedrag van uw kind")
 
 # Vragen en puntensysteem
