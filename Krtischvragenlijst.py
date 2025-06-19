@@ -59,10 +59,10 @@ st.title("Vragenlijst over het eetgedrag van uw kind")
 
 # Vragen en puntensysteem
 vragen = [
-    st.radio("Eet uw kind minder dan aanbevolen hoeveelheid voor zijn of haar leeftijd?", ["Nee", "Soms", "Ja"]),
-    st.markdown(
-        "De aanbevolen hoeveelheid kunt u [hier berekenen](https://www.voedingscentrum.nl/nl/service/vraag-en-antwoord/kinderen-en-jongeren/"
-        "hoeveel-calorieen-heeft-mijn-kind-nodig-1-tot-en-met-9-jaar-.aspx)."
+    ("Eet uw kind minder dan aanbevolen hoeveelheid voor zijn of haar leeftijd? "
+        "De aanbevolen hoeveelheid kunt u <a href='https://www.voedingscentrum.nl/nl/service/vraag-en-antwoord/kinderen-en-jongeren/hoeveel-calorieen-heeft-mijn-kind-nodig-1-tot-en-met-9-jaar-.aspx' target='_blank' "
+        "style='color:darkgreen; text-decoration:underline;'>hier</a> berekenen.",
+        [0, 2, 8]
     ),
     ("Kokhalst uw kind tijdens de maaltijd?", [0, 2, 8]),
     ("Is uw kind in de afgelopen 3 maanden afgevallen, zonder aanwijsbare reden (ziekte)?", [0, 2, 8]),
@@ -143,4 +143,3 @@ if submitted:
                 unsafe_allow_html=True
             )
 
-        
