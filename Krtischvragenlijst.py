@@ -110,21 +110,21 @@ if submitted:
         score = sum(antwoorden)
 
         # Advies tonen met neutrale (zwarte) tekst
-        if score < 10:
+        if score < 20:
             st.markdown(
-                "<b>✅ Advies:</b> Bij een score onder de 8 zijn er geen aanwijzingen tot problematisch kritisch eetgedrag. "
+                "<b>✅ Advies:</b> Bij een score onder de 20 zijn er geen aanwijzingen tot problematisch kritisch eetgedrag. "
                 "Het eetgedrag van uw peuter kan vervelend zijn, maar hoort waarschijnlijk bij de leeftijd. "
-                "Klik <a href='https://github.com/RomyBrink/Eetgedrag/blob/main/AvoidantRestrictive_Food_Intake_Disorder_A_Longitu.pdf' "
+                "Klik <a href='https://github.com/RomyBrink/Eetgedrag/blob/main/Brochure Kritische eters.pdf' "
                 "style='color:darkgreen;' target='_blank'>hier</a> voor de brochure <i>Stapjes naar meer hapjes</i> met eenvoudige, praktische adviezen om het eetgedrag van hun kind te ondersteunen."
                 "</div>",
                 unsafe_allow_html=True
             )
-        if 8 <= score <= 12:
+        if 20 <= score <= 40:
             st.markdown(
                 "<div style='background-color:#fff4cc;padding:15px;border-radius:10px;'>"
-                "<b>⚠️ Advies:</b> Een score tussen 8 en 12 wijst op eetgedrag dat aandacht vraagt, maar nog niet direct zorgwekkend is. "
+                "<b>⚠️ Advies:</b> Een score tussen 20 en 40 wijst op eetgedrag dat aandacht vraagt, maar nog niet direct zorgwekkend is. "
                 "Ouders worden aangeraden om het eetgedrag van hun kind actief te observeren en de tips uit <i>Stapjes naar meer hapjes</i> toe te passen. "
-                "Klik <a href='https://github.com/RomyBrink/Eetgedrag/blob/main/AvoidantRestrictive_Food_Intake_Disorder_A_Longitu.pdf' "
+                "Klik <a href='https://github.com/RomyBrink/Eetgedrag/blob/main/Brochure Kritische eters.pdf' "
                 "style='color:darkgreen;' target='_blank'>hier</a> voor de brochure. Als het gedrag na enkele weken niet verbetert of verslechtert, "
                 "kan het nuttig zijn om alsnog een volgende stap te overwegen, zoals een afspraak bij een huisarts of consultatiebureau."
                 "</div>",
@@ -133,7 +133,7 @@ if submitted:
         else:
             st.markdown(
                 "<div style='background-color:#ffe6e6;padding:15px;border-radius:10px;'>"
-                "<b>❗ Advies:</b> Bij een score boven de 12 wordt er geadviseerd om contact op te nemen met een diëtist. "
+                "<b>❗ Advies:</b> Bij een score boven de 40 wordt er geadviseerd om contact op te nemen met een diëtist. "
                 "De diëtist kan helpen om de achterliggende oorzaken van het eetgedrag in kaart te brengen (bijvoorbeeld medische of psychologische factoren) "
                 "en een gerichte aanpak bieden om het eetgedrag van het kind te verbeteren. "
                 "Klik <a href='https://www.nvdietist.nl/ik-zoek-een-dietist/' style='color:darkred;' target='_blank'>hier</a> om een diëtist te vinden, of "
