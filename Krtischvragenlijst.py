@@ -59,12 +59,10 @@ st.title("Vragenlijst over het eetgedrag van uw kind")
 
 # Vragen en puntensysteem
 vragen = [
-    (
-        "Eet uw kind minder dan aanbevolen hoeveelheid voor zijn of haar leeftijd? "
-        "De aanbevolen hoeveelheid kunt u <a href='https://www.voedingscentrum.nl/nl/service/vraag-en-antwoord/kinderen-en-jongeren/"
-        "hoeveel-calorieen-heeft-mijn-kind-nodig-1-tot-en-met-9-jaar-.aspx' target='_blank' "
-        "style='color:darkgreen; text-decoration:underline;'>hier</a> berekenen.",
-        [0, 2, 8]
+    st.radio("Eet uw kind minder dan aanbevolen hoeveelheid voor zijn of haar leeftijd?", ["Nee", "Soms", "Ja"]),
+    st.markdown(
+        "De aanbevolen hoeveelheid kunt u [hier berekenen](https://www.voedingscentrum.nl/nl/service/vraag-en-antwoord/kinderen-en-jongeren/"
+        "hoeveel-calorieen-heeft-mijn-kind-nodig-1-tot-en-met-9-jaar-.aspx)."
     ),
     ("Kokhalst uw kind tijdens de maaltijd?", [0, 2, 8]),
     ("Is uw kind in de afgelopen 3 maanden afgevallen, zonder aanwijsbare reden (ziekte)?", [0, 2, 8]),
@@ -139,7 +137,10 @@ if submitted:
                 "<b>❗ Advies:</b> Bij een score boven de 12 wordt er geadviseerd om contact op te nemen met een diëtist. "
                 "De diëtist kan helpen om de achterliggende oorzaken van het eetgedrag in kaart te brengen (bijvoorbeeld medische of psychologische factoren) "
                 "en een gerichte aanpak bieden om het eetgedrag van het kind te verbeteren. "
+                "Klik <a href='https://www.nvdietist.nl/ik-zoek-een-dietist/' style='color:darkred;' target='_blank'>hier</a> om een diëtist te vinden, of "
+                "<a href='https://deniedietisten.nl/contactgegevens/' style='color:darkred;' target='_blank'>hier</a> om contact op te nemen met De Nie diëtisten."
                 "</div>",
                 unsafe_allow_html=True
             )
+
         
