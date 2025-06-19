@@ -5,7 +5,7 @@ st.set_page_config(page_title="Eetgedrag Vragenlijst", layout="centered")
 
 # Intro en uitleg
 st.markdown("### 🌟 De PeuterEetCompas: Vragenlijst met passend advies")
-st.markdown("<span style='color:darkgreen;font-size:18px;'>Deze vragenlijst is voor ouders van kinderen tussen 1 en 6 jaar.Beantwoord de vragen door 'Nee', 'Soms' of 'Ja' aan te kruisen. Aan het einde krijgt u op basis van uw antwoorden een passend advies met betrekking tot het eetgedrag van uw kind.</span>", unsafe_allow_html=True)
+st.markdown("<span style='color:darkgreen;font-size:18px;'>Deze vragenlijst is voor ouders van kinderen tussen 1 en 6 jaar oud. Beantwoord de vragen door 'Nee', 'Soms' of 'Ja' aan te kruisen. Aan het einde krijgt u op basis van uw antwoorden een passend advies met betrekking tot het eetgedrag van uw kind.</span>", unsafe_allow_html=True)
 st.markdown("<span style='color:red;font-size:18px;'>Let op: voor een betrouwbaar advies moet u elke vraag zorgvuldig beantwoorden.</span>", unsafe_allow_html=True)
 
 # ✅ Nieuwe, verbeterde CSS
@@ -60,13 +60,13 @@ st.title("Vragenlijst over het eetgedrag van uw kind")
 
 # Vragen en puntensysteem
 vragen = [
-    ("Eet uw kind minder dan de aanbevolen hoeveelheid voor zijn of haar leeftijd? "
-     "De aanbevolen hoeveelheid kunt u vinden op de website van het Voedingscentrum: "
-     "https://www.voedingscentrum.nl/nl/service/vraag-en-antwoord/kinderen-en-jongeren/hoeveel-calorieen-heeft-mijn-kind-nodig-1-tot-en-met-9-jaar-.aspx", [0, 2, 8]),
     ("Kokhalst uw kind tijdens de maaltijd?", [0, 2, 8]),
     ("Is uw kind in de afgelopen 3 maanden afgevallen, zonder aanwijsbare reden (ziekte)?", [0, 2, 8]),
     ("Heeft uw kind bij de introductie vaste voeding alles leren eten?", [8, 2, 0]),
     ("Heeft uw kind problemen met het kauwen en of slikken van het eten?", [0, 2, 8]),
+    ("Eet uw kind minder dan de aanbevolen hoeveelheid voor zijn of haar leeftijd? "
+     "De aanbevolen hoeveelheid kunt u vinden op de website van het Voedingscentrum: "
+     "https://www.voedingscentrum.nl/nl/service/vraag-en-antwoord/kinderen-en-jongeren/hoeveel-calorieen-heeft-mijn-kind-nodig-1-tot-en-met-9-jaar-.aspx", [0, 2, 8]),
     ("Klaagt uw kind over misselijkheid of buikpijn?", [0, 2, 8]),
     ("Heeft uw kind een sterke voorkeur voor bepaalde producten?", [0, 2, 8]),
     ("Weigert uw kind nieuwe producten te proberen?", [0, 2, 8]),
@@ -112,9 +112,9 @@ if submitted:
         # Advies tonen met neutrale (zwarte) tekst
         if score < 20:
             st.markdown(
-                "<b>✅ Advies:</b> Bij een score onder de 20 zijn er geen aanwijzingen tot problematisch kritisch eetgedrag. "
+                "<b>✅ Advies:</b> Er zijn geen aanwijzingen tot problematisch kritisch eetgedrag. "
                 "Het eetgedrag van uw peuter kan vervelend zijn, maar hoort waarschijnlijk bij de leeftijd. "
-                "Klik <a href='https://github.com/RomyBrink/Eetgedrag/blob/main/Brochure Kritische eters.pdf' "
+                "Klik <a href='https://drive.google.com/file/d/1mXb6XCj252KMXJ0QyRMJPp803jLvowFk/view?usp=sharing' "
                 "style='color:darkgreen;' target='_blank'>hier</a> voor de brochure <i>Stapjes naar meer hapjes</i> met eenvoudige, praktische adviezen om het eetgedrag van hun kind te ondersteunen."
                 "</div>",
                 unsafe_allow_html=True
@@ -122,9 +122,8 @@ if submitted:
         if 20 <= score <= 40:
             st.markdown(
                 "<div style='background-color:#fff4cc;padding:15px;border-radius:10px;'>"
-                "<b>⚠️ Advies:</b> Een score tussen 20 en 40 wijst op eetgedrag dat aandacht vraagt, maar nog niet direct zorgwekkend is. "
-                "Ouders worden aangeraden om het eetgedrag van hun kind actief te observeren en de tips uit <i>Stapjes naar meer hapjes</i> toe te passen. "
-                "Klik <a href='https://github.com/RomyBrink/Eetgedrag/blob/main/Brochure Kritische eters.pdf' "
+                "<b>⚠️ Advies:</b>Ouders worden aangeraden om het eetgedrag van hun kind actief te observeren en de tips uit <i>Stapjes naar meer hapjes</i> toe te passen. "
+                "Klik <a href='https://drive.google.com/file/d/1mXb6XCj252KMXJ0QyRMJPp803jLvowFk/view?usp=sharing' "
                 "style='color:darkgreen;' target='_blank'>hier</a> voor de brochure. Als het gedrag na enkele weken niet verbetert of verslechtert, "
                 "kan het nuttig zijn om alsnog een volgende stap te overwegen, zoals een afspraak bij een huisarts of consultatiebureau."
                 "</div>",
@@ -133,7 +132,7 @@ if submitted:
         else:
             st.markdown(
                 "<div style='background-color:#ffe6e6;padding:15px;border-radius:10px;'>"
-                "<b>❗ Advies:</b> Bij een score boven de 40 wordt er geadviseerd om contact op te nemen met een diëtist. "
+                "<b>❗ Advies:</b> Er wordt geadviseerd om contact op te nemen met een diëtist. "
                 "De diëtist kan helpen om de achterliggende oorzaken van het eetgedrag in kaart te brengen (bijvoorbeeld medische of psychologische factoren) "
                 "en een gerichte aanpak bieden om het eetgedrag van het kind te verbeteren. "
                 "Klik <a href='https://www.nvdietist.nl/ik-zoek-een-dietist/' style='color:darkred;' target='_blank'>hier</a> om een diëtist te vinden, of "
