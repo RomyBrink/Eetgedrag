@@ -4,8 +4,9 @@ import streamlit as st
 st.set_page_config(page_title="Eetgedrag Vragenlijst", layout="centered")
 
 # Intro en uitleg
-st.markdown("### 🌟 Deze vragenlijst is voor ouders van kinderen tussen 1 en 6 jaar. Beantwoord de vragen door 'Nee', 'Soms' of 'Ja' aan te kruisen. Aan het einde krijgt u op basis van uw antwoorden een passend advies met betrekking tot het eetgedrag van uw kind.")
-st.markdown("<span style='color:darkgreen;font-size:18px;'>Let op: voor een betrouwbaar advies moet u elke vraag zorgvuldig beantwoorden.</span>", unsafe_allow_html=True)
+st.markdown("### 🌟 Deze vragenlijst is voor ouders van kinderen tussen 1 en 6 jaar.")
+st.markdown("<span style='color:darkgreen;font-size:18px;'>Beantwoord de vragen door 'Nee', 'Soms' of 'Ja' aan te kruisen. Aan het einde krijgt u op basis van uw antwoorden een passend advies met betrekking tot het eetgedrag van uw kind.</span>", unsafe_allow_html=True)
+st.markdown("<span style='color:red;font-size:18px;'>Let op: voor een betrouwbaar advies moet u elke vraag zorgvuldig beantwoorden.</span>", unsafe_allow_html=True)
 
 # ✅ Nieuwe, verbeterde CSS
 st.markdown(
@@ -60,10 +61,7 @@ st.title("Vragenlijst over het eetgedrag van uw kind")
 # Vragen en puntensysteem
 vragen = [
     ("Eet uw kind minder dan aanbevolen hoeveelheid voor zijn of haar leeftijd? "
-        "De aanbevolen hoeveelheid kunt u <a href='https://www.voedingscentrum.nl/nl/service/vraag-en-antwoord/kinderen-en-jongeren/hoeveel-calorieen-heeft-mijn-kind-nodig-1-tot-en-met-9-jaar-.aspx' target='_blank' "
-        "style='color:darkgreen; text-decoration:underline;'>hier</a> berekenen.",
-        [0, 2, 8]
-    ),
+        "De aanbevolen hoeveelheid kunt u vinden op de website van het voedingscentrum:https://www.voedingscentrum.nl/nl/service/vraag-en-antwoord/kinderen-en-jongeren/hoeveel-calorieen-heeft-mijn-kind-nodig-1-tot-en-met-9-jaar-.aspx" [0, 2, 8] ),
     ("Kokhalst uw kind tijdens de maaltijd?", [0, 2, 8]),
     ("Is uw kind in de afgelopen 3 maanden afgevallen, zonder aanwijsbare reden (ziekte)?", [0, 2, 8]),
     ("Heeft uw kind bij de introductie vaste voeding alles leren eten?", [8, 2, 0]),
