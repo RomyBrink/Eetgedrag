@@ -62,7 +62,7 @@ st.title("Vragenlijst over het eetgedrag van uw kind")
 vragen = [
     ("Eet uw kind minder dan de aanbevolen hoeveelheid voor zijn of haar leeftijd? "
      "De aanbevolen hoeveelheid kunt u vinden op de website van het Voedingscentrum: "
-     "<a href='https://www.voedingscentrum.nl/nl/service/vraag-en-antwoord/kinderen-en-jongeren/hoeveel-calorieen-heeft-mijn-kind-nodig-1-tot-en-met-9-jaar-.aspx' target='_blank'>Hier kunt u de aanbevolen hoeveelheid vinden</a>", [0, 2, 8]),
+     "https://www.voedingscentrum.nl/nl/service/vraag-en-antwoord/kinderen-en-jongeren/hoeveel-calorieen-heeft-mijn-kind-nodig-1-tot-en-met-9-jaar-.aspx", [0, 2, 8]),
     ("Kokhalst uw kind tijdens de maaltijd?", [0, 2, 8]),
     ("Is uw kind in de afgelopen 3 maanden afgevallen, zonder aanwijsbare reden (ziekte)?", [0, 2, 8]),
     ("Heeft uw kind bij de introductie vaste voeding alles leren eten?", [8, 2, 0]),
