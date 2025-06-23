@@ -8,7 +8,6 @@ st.markdown("### 🌟 De PeuterEetCompas: Vragenlijst met passend advies")
 st.markdown("<span style='color:darkgreen;font-size:18px;'>Deze vragenlijst is voor ouders van kinderen tussen 1 en 6 jaar oud. Beantwoord de vragen door 'Nee', 'Soms' of 'Ja' aan te kruisen. Aan het einde krijgt u op basis van uw antwoorden een passend advies met betrekking tot het eetgedrag van uw kind.</span>", unsafe_allow_html=True)
 st.markdown("<span style='color:red;font-size:18px;'>Let op: voor een betrouwbaar advies moet u elke vraag zorgvuldig beantwoorden.</span>", unsafe_allow_html=True)
 
-# ✅ Nieuwe, verbeterde CSS
 st.markdown(
     """
     <style>
@@ -32,7 +31,7 @@ st.markdown(
     }
 
     /* Radiobutton tekst = wit */
-    div[data-testid="stRadio"] label {
+    div[data-testid="stRadio"] *, div[data-testid="stRadio"] label {
         color: white !important;
     }
 
@@ -53,6 +52,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
 # Titel
 st.title("Vragenlijst over het eetgedrag van uw kind")
@@ -122,7 +122,7 @@ if submitted:
         if 20 <= score <= 40:
             st.markdown(
                 "<div style='background-color:#fff4cc;padding:15px;border-radius:10px;'>"
-                "<b>⚠️ Advies:</b>Ouders worden aangeraden om het eetgedrag van hun kind actief te observeren en de tips uit <i>Stapjes naar meer hapjes</i> toe te passen. "
+                "<b>⚠️ Advies:</b> Ouders worden aangeraden om het eetgedrag van hun kind actief te observeren en de tips uit <i>Stapjes naar meer hapjes</i> toe te passen. "
                 "Klik <a href='https://drive.google.com/file/d/1mXb6XCj252KMXJ0QyRMJPp803jLvowFk/view?usp=sharing' "
                 "style='color:darkgreen;' target='_blank'>hier</a> voor de brochure. Als het gedrag na enkele weken niet verbetert of verslechtert, "
                 "kan het nuttig zijn om alsnog een volgende stap te overwegen, zoals een afspraak bij een huisarts of consultatiebureau."
