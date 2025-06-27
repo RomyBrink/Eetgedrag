@@ -66,7 +66,7 @@ with st.form("vragenlijst_form"):
     submitted = st.form_submit_button("Verstuur")
 
 if submitted:
-    def print_advies(kleur, score):
+    def bepaal_adviesniveau(kleur, score):
         if kleur in ["blauw", "roze"]:
             if score > 8:
                 return 3
@@ -88,6 +88,10 @@ if submitted:
                 return 2
             else:
                 return 1
+
+    # Adviesniveaus verzamelen
+    adviesniveaus = [bepaal_adviesniveau(kleur, score) for kleur, score in kleuren_scores.items()]
+    hoogste_adviesniveau = max(adviesniveaus)
 
     # Adviesblokken
     adviezen_html = {
@@ -123,29 +127,5 @@ if submitted:
         """
     }
 
-    kleur_omschrijving = {
-        "blauw": "🔵 **Blauw** (o.a. medische signalen)",
-        "roze": "🌸 **Roze** (selectief eetgedrag)",
-        "groen": "🍀 **Groen** (motivatie & eetplezier)",
-        "oranje": "🟠 **Oranje** (medisch verleden/incidenten)"
-    }
-
-    st.markdown("## 🧾 Persoonlijk advies per categorie:")
-
-    for kleur, score in kleuren_scores.items():
-        adviesniveau = print_advies(kleur, score)
-        st.markdown(f"### {kleur_omschrijving[kleur]} — {score} punten")
-        st.markdown(adviezen_html[adviesniveau], unsafe_allow_html=True)
-
-
-# if submitted:
-#     st.markdown("## 🧾 Persoonlijk advies per categorie:")
-#     for kleur, score in kleuren_scores.items():
-#         advies = geef_advies(kleur, score)
-#         kleur_nl = kleur.capitalize()
-#         st.markdown(f"**{kleur_nl} vragen ({score} punten):** {advies}")
-
-    # st.markdown("""
-    #     <br><br>
-    #     👉 Bekijk de brochure <a href='https://drive.google.com/file/d/1mXb6XCj252KMXJ0QyRMJPp803jLvowFk/view?usp=sharing' target='_blank'>Stapjes naar meer hapjes</a> voor tips.
-    # """, unsafe_allow_html=True)
+    # Toon slechts het hoogste noodzakelijke advies
+    st.markdown(adviezen_html[hoogste_adviesniveau], unsafe_allow_html=True)
